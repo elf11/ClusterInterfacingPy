@@ -1,0 +1,33 @@
+NICULAESCU OANA-GEORGIANA
+331CB
+
+TEMA 1 ASC - Simularea activitatii unui cluster
+
+Cerinta 
+Simularea activitatii unui cluster utilizand limbajul Python. Joburile trimise
+de utilizatori presupun inmultirea a doua matrice mari patratice.Fiecare job va
+fi format din mai multe task-uri, fiecare task necesitand calcularea unui bloc din
+matricea finala.
+
+Implementare
+In fisierul Node.py am implementat clasa MyThread care implementeaza Thread. In aceasta
+clasa se face inregistrarea unui nod la data store-ul altui nod si se aduce elementul
+de pe pozitia (row, col) care se gaseste in data store-ul acestuia in nodul care are
+nevoie de el pentru a realiza inmultirea matricelor.
+In clasa Node, in metoda compute_matrix_block se realizeaza inmultirea efectiva a 
+celor 2 blocuri ale matricei. Mai intai sunt aduse si salvate toate elementele matricei A,
+pornind de la start_row si pana la start_row + num_rows, dimensiunea unui rand fiind egala
+cu dimensiunea matricei. Apoi, sunt aduse si salvate toate elementele matricei B,
+pornind de la start_col si pana la start_col + num_cols, dimensiunea unei coloane fiind
+egala tot cu dimensiunea matricei. Cele 2 blocuri sunt apoi inmultite si salvate
+in matricea ce trebuie intoarsa.
+P.S. Cred ca asta era implementarea "de porc" despre care vorbeai pe forum.
+
+Detalii testare:
+Tema a fost testata pe:
+Ubuntu 12.10, x64
+Intel i5, 2.5GHz
+L1 cache 128kB
+L2 cache 512kB
+L3 cache 3072kB
+Toate testele sunt 100%finished in momentul terminarii.
